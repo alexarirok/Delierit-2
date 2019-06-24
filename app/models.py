@@ -35,10 +35,10 @@ class Parcels(db.Model):
     __tablename__ = "parcels"
 
     id = db.Column(db.Integer, primary_key=True)
-    parcel_name = db.column(db.String(255))
-    pickup_destination = db.column(db.String(255))
-    delivery_destination = db.column(db.String(255))
-    parcel_number = db.column(db.Integer())
+    parcel_name = db.Column(db.String(255))
+    pickup_destination = db.Column(db.String(255))
+    delivery_destination = db.Column(db.String(255))
+    parcel_number = db.Column(db.Integer)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
     date_modified = db.Column(
     db.DateTime, default=db.func.current_timestamp(),
