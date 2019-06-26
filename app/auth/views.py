@@ -58,18 +58,18 @@ class LoginView(MethodView):
                        'access_token': access_token.decode()
                    }
                    return make_response(jsonify(response)), 200
-        else:
+            else:
             # User does not exist. Therefor, we return an error
-            response = {
+                response = {
                 'message': 'Invalid email or password, Please try again'
-            }
-            return make_response(jsonify(response)), 401
+                }
+                return make_response(jsonify(response)), 401
 
         except Exception as e:
-        # Create a response containing an string error message
+        
             response = {
-                'message': str(e)
-                }
+            'message': str(e)
+            }
         # Return a server error using the HTTP Error code
             return make_response(jsonify(response)), 500
 
@@ -88,5 +88,6 @@ class LoginView(MethodView):
 
     auth_blueprint.add_url_rule(
         '/auth/login',
-        view_func=login_view
-        methods=['POST'] )
+        view_func=login_view,
+        methods=['POST']
+    )
