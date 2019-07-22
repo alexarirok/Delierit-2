@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Delierit Courier Service</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+        <script src="js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+       
+        <h2>User can change the ​ status​​ and present​​ ​ location​​ of a parcel delivery order.</h2>
+
+        <table>
+            <tr>
+                <th>Parcel Name</th>
+                <th>Order Number</th> 
+                <th>Present Location</th>
+                <th>Pick Up station</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <th>Nokia Phone 7.1X</th>
+                <th>Order No.:2840060097822901 </th> 
+                <th>Nairobi</th>
+                <th><form action="index.html">
+                    <select name="destination">
+                      <option value="Nairobi">Nairobi</option>
+                      <option value="Mombasa">Mombasa</option>
+                      <option value="Eldoret" selected>Eldoret</option>
+                      <option value="Nakuru">Nakuru</option>
+                    </select>
+                    <br><br>
+                    <input type="submit">
+                  </form></th>
+                <th><div class="dropdown">
+                    <button class="dropbtn">Check Status</button>
+                    <div class="dropdown-content">
+                      <a href="#">Delievered</a>
+                      <a href="#">On transit</a>
+                      <a href="#">Pending dispatch</a>
+                    </div>
+                  </div></th>
+            </tr>
+        </table>
+    </body>
+</html>

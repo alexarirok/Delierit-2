@@ -8,7 +8,7 @@ db = SQLAlchemy()
 def create_app(config_name):
     from app.models import Parcels, Users
     app = FlaskAPI(__name__, instance_relative_config=True)
-    app.config.from_object(app_config[config_name])
+    app.config.from_object(app)
     app.config.from_pyfile('config.py')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
@@ -82,7 +82,7 @@ def create_app(config_name):
             # Get the user id related to this access token
             user_id = Users.decode_token(access_token) 
         
-            if not isinstance(User_id, str):
+            if not isinstance(user_id, str):
                 parcel = Parcels.query.filter_by(id=id).first()
 
                 if not parcel:
@@ -135,7 +135,7 @@ def create_app(config_name):
             # return an error response, telling the user he is Unauthorized
             return make_response(jsonify(response)), 401
         # import the authentication blueprint and register it on the app
-    from .auth import auth_blueprint
+    from app.auth import auth_blueprint
     app.register_blueprint(auth_blueprint)
 
 

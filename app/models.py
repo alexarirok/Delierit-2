@@ -78,9 +78,9 @@ class Parcels(db.Model):
     onupdate=db.func.current_timestamp())
     created_by = db.Column(db.Integer, db.ForeignKey(Users.id))
 
-    def __init__(self, name, created_by):
+    def __init__(self, parcel_name, created_by):
         # initialize with name.
-        self.name = name
+        self.parcel_name = parcel_name
         self.created_by = created_by
 
     def save(self):
@@ -93,7 +93,7 @@ class Parcels(db.Model):
         return Parcels.query.filter_by(created_by=user_id)
 
     def delete(self):
-        # Deletes a given bucketlist
+        # Deletes a given parcel
         db.session.delete(self)
         db.session.commit()
 
